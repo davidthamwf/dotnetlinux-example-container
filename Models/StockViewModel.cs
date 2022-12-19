@@ -29,3 +29,4 @@ namespace AspNetCoreWebApp.Models
         [JsonProperty(PropertyName = "adj_volume")]
         public string volume { get; set; }
     }
+}
