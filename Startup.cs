@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -48,15 +48,19 @@ namespace AspNetCoreWebApp
                 app.UseHsts();
             }
 
+            app.UseRouting();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+ // Migrate from Dot Net Core 2.0 to .Net Core 3.1 and newer
+ //           app.UseMvc(routes =>
+ //           {
+ //               routes.MapRoute(
+ //                   name: "default",
+ //                   template: "{controller=Home}/{action=Index}/{id?}");
+ //           });
+            app.UseEndpoints(endpoints => {
+                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
