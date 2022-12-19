@@ -19,7 +19,7 @@ namespace AspNetCoreWebApp.Controllers
             string url = "http://api.marketstack.com/v1/eod/latest?access_key={0}&symbols={1}";
 
             // Choose any tickers you want
-            List<string> tickers = new List<string> { "MSFT", "IBM", "AAPL" };
+            List<string> tickers = new List<string> { "GOOG", "AMZN", "TSLA" };
 
             // This holds all the data
             List<StockViewModel> objList = new List<StockViewModel>();
